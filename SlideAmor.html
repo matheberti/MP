@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💖 Feliz nosso dia 💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Nossas Memórias Juntos 💑</h1>
+
+    <div class="slideshow-container" id="slideshow">
+        <img src="fotos/foto1.jpg" class="slide active" alt="Foto 1">
+        <img src="fotos/foto2.jpg" class="slide" alt="Foto 2">
+        <img src="fotos/foto3.jpg" class="slide" alt="Foto 3">
+        <!-- Adicione mais fotos aqui -->
+
+        <div class="caption" id="caption">Nosso primeiro encontro 💖</div>
+    </div>
+
+    <div class="buttons">
+        <button onclick="changeSlide(-1)">⟵ Anterior</button>
+        <button onclick="changeSlide(1)">Próximo ⟶</button>
+    </div>
+
+    <h2>🎵 Nossas Musicas 🎶</h2>
+
+    <p id="currentSong">Tocando: música 1</p>
+  
+    <audio id="audioPlayer" controls autoplay></audio>
+  
+    <script>
+      const playlist = [
+        { src: "musica/musica1.mp3", name: "Nossa 1ª música 💖" },
+        { src: "musica/musica2.mp3", name: "Aquela da praia 🌊" },
+        { src: "musica/musica3.mp3", name: "A que você ama 💫" }
+      ];
+  
+      const audioPlayer = document.getElementById("audioPlayer");
+      const currentSongText = document.getElementById("currentSong");
+      let currentIndex = 0;
+  
+      function loadSong(index) {
+        audioPlayer.src = playlist[index].src;
+        currentSongText.textContent = "Tocando: " + playlist[index].name;
+        audioPlayer.play();
+      }
+  
+      audioPlayer.addEventListener("ended", () => {
+        currentIndex = (currentIndex + 1) % playlist.length; // loop back to start
+        loadSong(currentIndex);
+      });
+  
+      // Start first song
+      loadSong(currentIndex);
+
+    </script>
+
+    <!-- Música romântica
+
+    <audio autoplay loop controls>
+        <source src="musica/musica.mpeg" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+
+    
+<audio id="meuAudio" controls>
+  <source src="musica.mp3" type="audio/mpeg">
+  Seu navegador não suporta o elemento de áudio.
+</audio>
+
+<script>
+  const audio = document.getElementById("meuAudio");
+  audio.volume = 0.5; // Valor entre 0.0 (mudo) e 1.0 (máximo)
+</script>
+
+-->
+
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const captions = [
+            "Nosso primeiro encontro 💖",
+            "Aquele dia incrível na praia 🌅",
+            "Nosso sorriso diz tudo 😍"
+
+            // Adicione mais legendas aqui, na mesma ordem das imagens
+        ];
+        const captionEl = document.getElementById('caption');
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            currentSlide = (index + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            captionEl.textContent = captions[currentSlide];
+            captionEl.classList.remove('fadeIn');
+            void captionEl.offsetWidth; // força reflow pra reiniciar animação
+            captionEl.classList.add('fadeIn');
+        }
+
+        function changeSlide(n) {
+            showSlide(currentSlide + n);
+        }
+
+        setInterval(() => changeSlide(1), 5000);
+
+    </script>
+
+</body>
+
+</html>

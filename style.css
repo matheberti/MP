@@ -1,0 +1,210 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(#ffe6f0, #ffccda);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+}
+
+h1 {
+    color: #d63384;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+h2 {
+    color: #d63384;
+
+}
+
+.h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.8em;
+    color: #d63384;
+    margin: 1px;
+    visibility: hidden;
+}
+
+.bnt {
+    margin-top: 5px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    z-index: 1;
+    display: none;
+}
+
+.bnt:hover {
+    background-color: #ff1493;
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    transform: rotate(45deg);
+    animation: fall 5s infinite;
+    opacity: 0.7;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    left: -10px;
+    top: 0;
+}
+
+@keyframes fall {
+    0% {
+        top: -10%;
+        transform: translateX(0) rotate(45deg);
+    }
+
+    100% {
+        top: 110%;
+        transform: translateX(100px) rotate(45deg);
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 12px 24px;
+    }
+
+    .heart,
+    .heart::before,
+    .heart::after {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+/* Pagina Slide */
+
+.slideshow-container {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    position: absolute;
+}
+
+.slide.active {
+    display: block;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 1em;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff1493;
+}
+
+@media (max-width: 600px) {
+    .slideshow-container {
+        height: 250px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+}
+
+.caption {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2em;
+    color: white;
+    text-shadow: 0 0 8px #000;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .slideshow-container {
+        height: 250px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .caption {
+        font-size: 1em;
+    }
+}
+
+audio {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    
+}

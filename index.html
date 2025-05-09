@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💖 Feliz nosso dia 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <h1 id="msg1" class="h1">Patrícia,</h1>
+  <h1 id="msg2" class="h1">Parabéns pelo nosso dia.</h1>
+  <h1 id="msg3" class="h1">Te amo</h1>
+  <h1 id="msg4" class="h1">💖</h1>
+  <button onclick="location.href='SlideAmor.html'" id="btn" class="bnt">Clique para continuar</button>
+
+  <script>
+    function typeEffect(element, speed, callback) {
+      const text = element.textContent;
+      element.textContent = '';
+      element.style.visibility = 'visible';
+      let i = 0;
+      function type() {
+        if (i < text.length) {
+          element.textContent += text.charAt(i);
+          i++;
+          setTimeout(type, speed);
+        } else if (callback) {
+          callback();
+        }
+      }
+      type();
+    }
+
+    // Executar os três efeitos em sequência
+    typeEffect(document.getElementById('msg1'), 50, () => {
+      typeEffect(document.getElementById('msg2'), 50, () => {
+        typeEffect(document.getElementById('msg3'), 50, () => {
+          typeEffect(document.getElementById('msg4'), 50, () => {
+            document.getElementById('btn').style.display = 'inline-block';
+          });
+        });
+      });
+    });
+
+    // Corações caindo
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+
+</body>
+
+</html>
