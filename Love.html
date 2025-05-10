@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Te Amo em Todas as Línguas</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fff0f5;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .love-text {
+      position: absolute;
+      white-space: nowrap;
+      color: rgba(231, 62, 149, 0.655);
+      font-size: 1.5em;
+      user-select: none;
+      pointer-events: none;
+      animation: float 60s linear infinite;
+    }
+
+    @keyframes float {
+      from { transform: translateY(100vh); }
+      to { transform: translateY(-200vh); }
+    }
+
+    h1 {
+      position: absolute;
+      top: 20px;
+      width: 100%;
+      text-align: center;
+      color: #d63384;
+      font-size: 2.5em;
+      z-index: 10;
+      text-shadow: 0 0 5px #fff;
+    }
+
+    .love-box {
+        position: absolute;
+        top: 300px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: linear-gradient(135deg, #ffe6f0cc, #fff5f9cc);
+        padding: 25px 35px;
+        border-radius: 25px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        width: 90%;
+        max-width: 500px;
+        text-align: center;
+        font-size: 1.3em;
+        color: #c2185b;
+        font-weight: 500;
+        line-height: 1.6em;
+        z-index: 11;
+        border: 2px dashed #f8bbd0;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <h1>💞 Amor em Todas as Línguas 💞</h1>
+
+    <div class="love-box">
+        <p>
+            Patricia, cada momento contigo é um presente.  
+            Obrigado por ser minha luz, minha paz e meu amor.  
+            Feliz nosso dia! 💖
+    </p>
+    </div>
+
+
+  <script>
+    const frases = [
+      // "Eu te amo" em várias línguas
+      "Eu te amo", "I love you", "Te amo", "Je t’aime", "Ich liebe dich", "Ti amo", "愛してる", "사랑해", "我爱你", "Я тебя люблю", "أنا أحبك",
+      // "Amo amar você"
+      "Amo amar você", "I love loving you", "Me encanta amarte", "J’aime t’aimer", "Ich liebe es, dich zu lieben",
+      // "Feliz nosso dia"
+      "Feliz nosso dia", "Happy our day", "Feliz nuestro día", "Joyeuse journée à nous", "Glücklicher Tag für uns"
+    ];
+
+    function randomPosition(max) {
+      return Math.floor(Math.random() * max);
+    }
+
+    for (let i = 0; i < 200; i++) {
+      const span = document.createElement('span');
+      span.classList.add('love-text');
+      span.textContent = frases[Math.floor(Math.random() * frases.length)];
+      span.style.top = `${randomPosition(window.innerHeight)}px`;
+      span.style.left = `${randomPosition(window.innerWidth)}px`;
+      span.style.fontSize = `${Math.random() * 1.5 + 1}em`;
+      span.style.animationDuration = `${30 + Math.random() * 30}s`;
+      document.body.appendChild(span);
+    }
+  </script>
+
+</body>
+</html>
