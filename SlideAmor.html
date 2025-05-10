@@ -2,15 +2,13 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>💖 Feliz nosso dia 💖</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💖 Feliz nosso dia 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
-    <style>
-
-    </style>
 </head>
 
 <body>
@@ -109,8 +107,9 @@
     <script>
       const playlist = [
         { src: "musica/musica1.mp3", name: "Nossa 1ª música 💖" },
-        { src: "musica/musica2.mp3", name: "Aquela da praia ❤️" },
-        { src: "musica/musica3.mp3", name: "A que você ama 💫" }
+        { src: "musica/musica2.mp3", name: "Eu já decorei mesmo ❤️" },
+        { src: "musica/musica3.mp3", name: "A musica do nosso APzinho 💕" },
+        { src: "musica/musica4.mp3", name: "Seremos uma familia perfeita 😍" }
       ];
   
       const audioPlayer = document.getElementById("audioPlayer");
@@ -119,7 +118,7 @@
   
       function loadSong(index) {
         audioPlayer.src = playlist[index].src;
-        currentSongText.textContent = "Tocando: " + playlist[index].name;
+        currentSongText.textContent = " " + playlist[index].name;
         audioPlayer.play();
       }
   
