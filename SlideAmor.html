@@ -21,9 +21,28 @@
         <img src="fotos/foto1.jpg" class="slide active" alt="Foto 1">
         <img src="fotos/foto2.jpg" class="slide" alt="Foto 2">
         <img src="fotos/foto3.jpg" class="slide" alt="Foto 3">
+        <img src="fotos/foto4.jpg" class="slide" alt="Foto 4">
+        <img src="fotos/foto5.jpg" class="slide" alt="Foto 5">
+        <img src="fotos/foto6.jpg" class="slide" alt="Foto 6">
+        <img src="fotos/foto7.jpg" class="slide" alt="Foto 7">
+        <img src="fotos/foto8.jpg" class="slide" alt="Foto 8">
+        <img src="fotos/foto9.jpg" class="slide" alt="Foto 9">
+        <img src="fotos/foto10.jpg" class="slide" alt="Foto 10">
+        <img src="fotos/foto11.jpg" class="slide" alt="Foto 11">
+        <img src="fotos/foto12.jpg" class="slide" alt="Foto 12">
+        <img src="fotos/foto13.jpg" class="slide" alt="Foto 13">
+        <img src="fotos/foto14.jpg" class="slide" alt="Foto 14">
+        <img src="fotos/foto15.jpg" class="slide" alt="Foto 15">
+        <img src="fotos/foto16.jpg" class="slide" alt="Foto 16">
+        <img src="fotos/foto17.jpg" class="slide" alt="Foto 17">
+        <img src="fotos/foto18.jpg" class="slide" alt="Foto 18">
+        <img src="fotos/foto19.jpg" class="slide" alt="Foto 19">
+        <img src="fotos/foto20.jpg" class="slide" alt="Foto 20">
+        <img src="fotos/foto21.jpg" class="slide" alt="Foto 21">
+
         <!-- Adicione mais fotos aqui -->
 
-        <div class="caption" id="caption">Nosso primeiro encontro 💖</div>
+        <div class="caption" id="caption">Nossa primeira reunião 💖</div>
     </div>
 
     <div class="buttons">
@@ -31,67 +50,32 @@
         <button onclick="changeSlide(1)">Próximo ⟶</button>
     </div>
 
-    <h2>🎵 Nossas Musicas 🎶</h2>
-
-    <p id="currentSong">Tocando: música 1</p>
-  
-    <audio id="audioPlayer" controls autoplay></audio>
-  
-    <script>
-      const playlist = [
-        { src: "musica/musica1.mp3", name: "Nossa 1ª música 💖" },
-        { src: "musica/musica2.mp3", name: "Aquela da praia 🌊" },
-        { src: "musica/musica3.mp3", name: "A que você ama 💫" }
-      ];
-  
-      const audioPlayer = document.getElementById("audioPlayer");
-      const currentSongText = document.getElementById("currentSong");
-      let currentIndex = 0;
-  
-      function loadSong(index) {
-        audioPlayer.src = playlist[index].src;
-        currentSongText.textContent = "Tocando: " + playlist[index].name;
-        audioPlayer.play();
-      }
-  
-      audioPlayer.addEventListener("ended", () => {
-        currentIndex = (currentIndex + 1) % playlist.length; // loop back to start
-        loadSong(currentIndex);
-      });
-  
-      // Start first song
-      loadSong(currentIndex);
-
-    </script>
-
-    <!-- Música romântica
-
-    <audio autoplay loop controls>
-        <source src="musica/musica.mpeg" type="audio/mpeg">
-        Seu navegador não suporta áudio.
-    </audio>
-
-    
-<audio id="meuAudio" controls>
-  <source src="musica.mp3" type="audio/mpeg">
-  Seu navegador não suporta o elemento de áudio.
-</audio>
-
-<script>
-  const audio = document.getElementById("meuAudio");
-  audio.volume = 0.5; // Valor entre 0.0 (mudo) e 1.0 (máximo)
-</script>
-
--->
-
-
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         const captions = [
-            "Nosso primeiro encontro 💖",
-            "Aquele dia incrível na praia 🌅",
-            "Nosso sorriso diz tudo 😍"
+
+            "Nossa primeira reunião 💖",
+            "Aquele dia incrível 💕",
+            "Nosso sorriso diz tudo 😍",
+            "Te amo muito 💕",
+            "Juntos, sempre e pra sempre 😘",
+            "Minha joia rara 🥰",
+            "O sorriso mais lindo do mundo 💝",
+            "Minha melhor companheira de campo 🩷",
+            "Amo amar você 💗",
+            "Obrigado por se dedicar por mim ❤️",
+            "Nosso Primeiro congresso juntos ❣️",
+            "Razão do meu sorriso 😍",
+            "Você me faz tão bem 💕",
+            "Agradeço todos os dias por você 💓",
+            "Te amo, minha vida 💌",
+            "Es meu amor, es parte de mim ❤️",
+            "Você tem o sorriso mais lindo do mundo 🩷",
+            "Feliz nosso dia 💝",
+            "Você é minha melhor escolha 😘",
+            "Você me faz feliz 💗",
+            "Minha Musa, minha inspiração, minha esposa ❤️"
 
             // Adicione mais legendas aqui, na mesma ordem das imagens
         ];
@@ -112,6 +96,40 @@
         }
 
         setInterval(() => changeSlide(1), 5000);
+
+    </script>
+
+    <!--Play list-->
+
+    <h2>🎵 Nossas Musicas 🎶</h2>
+
+    <p id="currentSong">Tocando: música 1</p>
+    <audio id="audioPlayer" controls autoplay></audio>
+
+    <script>
+      const playlist = [
+        { src: "musica/musica1.mp3", name: "Nossa 1ª música 💖" },
+        { src: "musica/musica2.mp3", name: "Aquela da praia ❤️" },
+        { src: "musica/musica3.mp3", name: "A que você ama 💫" }
+      ];
+  
+      const audioPlayer = document.getElementById("audioPlayer");
+      const currentSongText = document.getElementById("currentSong");
+      let currentIndex = 0;
+  
+      function loadSong(index) {
+        audioPlayer.src = playlist[index].src;
+        currentSongText.textContent = "Tocando: " + playlist[index].name;
+        audioPlayer.play();
+      }
+  
+      audioPlayer.addEventListener("ended", () => {
+        currentIndex = (currentIndex + 1) % playlist.length; // loop back to start
+        loadSong(currentIndex);
+      });
+  
+      // Start first song
+      loadSong(currentIndex);
 
     </script>
 

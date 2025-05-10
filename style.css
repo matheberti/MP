@@ -20,7 +20,7 @@ h1 {
 
 h2 {
     color: #d63384;
-
+    margin-bottom: 0px;
 }
 
 .h1 {
@@ -207,5 +207,7 @@ audio {
     bottom: 20px;
     left: 20px;
     display: none;
-    
+}
+#currentSong{
+    margin-top: 0px;
 }
